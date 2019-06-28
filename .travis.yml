@@ -2,8 +2,11 @@ sudo: false
 dist: trusty
 language: generic
 env:
-- PDK=release
-- PDK=nightly
+  global:
+    - PDK_DISABLE_ANALYTICS=1
+  matrix:
+    - PDK=release
+    - PDK=nightly
 before_install:
 - ".travis/install_pdk.sh"
 script:
